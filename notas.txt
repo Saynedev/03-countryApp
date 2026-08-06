@@ -1,0 +1,1 @@
+mapear: cca, flag, name.common, population, capital
