@@ -1,0 +1,38 @@
+<section class="mx-10">
+    <h1 class="text-3xl">{{ informationCountry().namee }} </h1>
+    
+</section>
+
+<section class="stats shadow">
+  <div class="stat place-items-center">
+    <div class="stat-title">Poblacion</div>
+    <div class="stat-value">{{ informationCountry().population | number }}</div>
+    <div class="stat-desc">{{ currentYear() }}</div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title">Nombre</div>
+    <div class="stat-value text-secondary">{{ informationCountry().namee }}</div>
+    <div class="stat-desc text-secondary">Region: {{ informationCountry().region }}</div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title">Capital</div>
+    <div class="stat-value">{{ informationCountry().capital }}</div>
+    <div class="stat-desc">{{ informationCountry().region }}</div>
+  </div>
+</section>
+
+<section class="diff aspect-16/9" tabindex="0">
+  <div class="diff-item-1" role="img" tabindex="0">
+    <img class="blur brightness-75" 
+    [alt]="informationCountry().namee" 
+    [src]="informationCountry().flag" />
+  </div>
+  <div class="diff-item-2" role="img">
+    <img 
+      [alt]="informationCountry().namee"
+      [src]="informationCountry().flag" />
+  </div>
+  <div class="diff-resizer"></div>
+</section>

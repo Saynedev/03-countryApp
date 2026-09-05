@@ -1,1 +1,15 @@
-<p>country-page works!</p>,
+@if(!countryResource.value() ) {
+
+    <not-found></not-found>
+
+} @else {
+    <country-information [informationCountry]="countryResource.value()!"></country-information>
+}
+
+@if(countryResource.isLoading()){
+    <h1 class="text-3x1">Cargando...</h1>
+}
+
+
+
+

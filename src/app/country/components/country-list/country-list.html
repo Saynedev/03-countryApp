@@ -24,7 +24,36 @@
                         {{ country.population | number }}
                     </span>
                     </td>   
-                    <td><a class="link-primary cursor-pointer" >Mas informacion</a></td>                   
+                    <td>
+                        <a 
+                        [routerLink]="['/country/by/', country.namee.toLowerCase()]"
+                        class="link-primary cursor-pointer" >Mas informacion</a>
+                    </td>                   
+                </tr>
+            }
+
+            @if (errorMessage()) {
+                <tr>
+                    <td colspan="8" class="text-center text-danger">
+                        {{ errorMessage() }}
+                    </td>
+                </tr>
+            }
+
+            @if(countries()?.length == 0 && !isLoading()) {
+                <tr>
+                    <td colspan="8" class="text-center text-warning">
+                        No se encontraron resultados
+                    </td>
+                </tr>
+            }
+
+            @if(isLoading()){
+                
+                <tr>
+                    <td colspan="8" class="text-center text-info">
+                        Cargando...
+                    </td>
                 </tr>
             }
         </tbody>

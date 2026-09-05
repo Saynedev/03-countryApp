@@ -6,3 +6,12 @@ export interface Country {
   population: number;
   region: string;
 }
+
+export const REGIONS = [
+  'Africa',
+  'Americas',
+  'Asia',
+  'Europe',
+  'Oceania',
+  'Antarctic',
+] as const;
